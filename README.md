@@ -1,5 +1,5 @@
-# 👋 مرحباً، أنا فارس أحمد
-
+ <h1 align="center"> 👋 مرحباً، أنا فارس أحمد </h1>
+ 
 <div align="center">
   <img height="150" src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif"  />
 </div>
@@ -9,6 +9,12 @@
 <p align="center">
    👋🏼 I'm <strong>Fares</strong>, a passionate <span style="color:#00a8cc;">Web Developer</span> from  Egypt.
 </p>
+
+<div align="center">
+  <a href="https://code-craft-nine-swart.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Code_Craft-2196F3?style=for-the-badge&logoColor=white" alt="Code Craft" width="150"/>
+  </a>
+</div>
 
 ## 🚀 مطور برمجيات متخصص في بناء تطبيقات ويب حديثة
 
