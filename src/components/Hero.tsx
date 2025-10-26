@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.jpg";
+import CursorMaskReveal from "./CursorMaskReveal";
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background/95 to-primary/5 px-6 py-20 overflow-hidden">
       {/* Animated Background Elements */}
@@ -22,24 +23,27 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
-        {/* Profile Image - First on mobile */}
+        {/* Profile Image with Cursor Mask Reveal - First on mobile */}
         <div className="flex justify-center lg:justify-start animate-fade-in-right delay-1000 order-1 lg:order-2">
-          <div className="relative group cursor-pointer perspective-1000">
-            {/* Simplified Glow Effects */}
-            <div className="absolute -inset-8 bg-primary/5 rounded-full blur-2xl opacity-30 group-hover:opacity-60 transition-all duration-1000 group-hover:bg-rose-200/20"></div>
-            <div className="absolute -inset-4 bg-accent/5 rounded-full blur-xl opacity-20 group-hover:opacity-50 transition-all duration-800 group-hover:bg-blue-200/15"></div>
+          <div className="relative group perspective-1000">
+            {/* Glow Effects */}
+            <div className="absolute -inset-8 bg-primary/5 rounded-full blur-2xl opacity-30 group-hover:opacity-60 transition-all duration-1000"></div>
+            <div className="absolute -inset-4 bg-accent/5 rounded-full blur-xl opacity-20 group-hover:opacity-50 transition-all duration-800"></div>
             
-            {/* Main Image Container with Pastel Hover */}
-            <div className="relative overflow-hidden rounded-full border-2 border-primary/20 group-hover:border-rose-300/40 transition-all duration-700 group-hover:shadow-xl group-hover:shadow-rose-200/30">
-              <img src={profilePhoto} alt="فارس - صورة شخصية" className="w-80 h-80 lg:w-96 lg:h-96 rounded-full object-cover transition-all duration-1000 group-hover:scale-105 transform-gpu filter group-hover:brightness-110 group-hover:saturate-110" loading="eager" />
-              {/* Pastel Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-rose-100/0 to-blue-100/0 group-hover:from-rose-100/20 group-hover:to-blue-100/15 transition-opacity duration-700 rounded-full"></div>
+            {/* Cursor Mask Reveal Effect */}
+            <div className="relative overflow-hidden rounded-full border-2 border-primary/20 group-hover:border-primary/40 transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-primary/20 w-80 h-80 lg:w-96 lg:h-96">
+              <CursorMaskReveal
+                backgroundImage={profilePhoto}
+                foregroundImage={profilePhoto}
+                maskSize={120}
+                className="w-full h-full rounded-full"
+              />
             </div>
             
-            {/* Subtle Floating Element */}
-            <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-gradient-to-br from-rose-200 to-blue-200 rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500 border-2 border-white group-hover:scale-110 animate-pulse">
-              <div className="w-6 h-6 bg-white/90 rounded-full flex items-center justify-center">
-                <div className="w-2 h-2 bg-rose-400 rounded-full"></div>
+            {/* Floating Element */}
+            <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500 border-2 border-background group-hover:scale-110 animate-pulse">
+              <div className="w-6 h-6 bg-background rounded-full flex items-center justify-center">
+                <div className="w-2 h-2 bg-primary rounded-full animate-ping"></div>
               </div>
             </div>
           </div>
