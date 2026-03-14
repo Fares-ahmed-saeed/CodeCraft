@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Portfolio from "@/components/Portfolio";
 import Contact from "@/components/Contact";
+import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
           <Contact />
         </section>
       </main>
+      <Chatbot />
     </div>
   );
 };
