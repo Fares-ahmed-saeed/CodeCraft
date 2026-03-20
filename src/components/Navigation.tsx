@@ -44,21 +44,23 @@ const Navigation = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8 space-x-reverse">
-              <button 
-                onClick={() => scrollToSection("hero")}
-                className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group animate-fade-in delay-400 px-4 py-2 hover:bg-primary/10 rounded-lg"
-              >
-                <span className="relative z-10">الرئيسية</span>
-                <div className="absolute inset-0 bg-primary/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
-              </button>
-              <button 
-                onClick={() => scrollToSection("portfolio")}
-                className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group animate-fade-in delay-500 px-4 py-2 hover:bg-primary/10 rounded-lg"
-              >
-                <span className="relative z-10">أعمالي</span>
-                <div className="absolute inset-0 bg-primary/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
-              </button>
+            <div className="hidden md:flex items-center space-x-6 space-x-reverse">
+              {[
+                { id: "hero", label: "الرئيسية" },
+                { id: "about", label: "عني" },
+                { id: "skills", label: "مهاراتي" },
+                { id: "portfolio", label: "أعمالي" },
+              ].map((item, i) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group animate-fade-in px-4 py-2 hover:bg-primary/10 rounded-lg"
+                  style={{ animationDelay: `${0.4 + i * 0.1}s` }}
+                >
+                  <span className="relative z-10">{item.label}</span>
+                  <div className="absolute inset-0 bg-primary/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" />
+                </button>
+              ))}
             </div>
 
             {/* CTA Button */}
